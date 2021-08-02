@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+  <script src="editor.js"></script>
+</head>
+
+<body>
+  <div id="myapp" style="position: absolute; left: 0px; top: 0px"></div>
+  <script>
+  var parentWindow = window.parent;
+  var app = Elm.QVG5.init({
+    node: document.getElementById('myapp')
+  });
+  app.ports.sendMes.subscribe(function(str) {
+	//console.log(str);
+	if (str == "Reset"){
+		if(window.confirm("エディタのブロックを全て削除します")){
+			app.ports.receiveMes.send("Reset");
+		}
+	}
+	else parentWindow.postMessage(str, '*');
+  });
+  
+  window.addEventListener("message", receiveMessage, false);
+  function receiveMessage(event){
+  	console.log(event.data);
+	app.ports.receiveMes.send(event.data);
+  }
+  </script>
+</body>
+</html>

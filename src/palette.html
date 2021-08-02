@@ -1,0 +1,22 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+  <script src="palette.js"></script>
+</head>
+
+<body>
+  <div id="myapp"></div>
+  <script>
+  var parentWindow = window.parent;
+  var app = Elm.Palette2.init({
+    node: document.getElementById('myapp')
+  });
+  app.ports.sendMes.subscribe(function(str) {
+	  //console.log(str);
+	  parentWindow.postMessage(str, '*');
+  });
+
+  </script>
+</body>
+</html>

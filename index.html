@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<iframe id="simulator" src="./src/simulator.html" style="position: absolute; left: 0%; top: 0%" width = "35%" height = "99%"></iframe>
+<iframe id="palette" src="./src/palette.html" style="position: absolute; left: 35%; top: 0%" width = "25%" height = "99%"></iframe>
+<iframe id="editor" src="./src/editor.html" style="position: absolute; left: 60%; top: 72px" width = "39%" height = "90%"></iframe>
+<iframe id="tab" src="./src/tab.html" style="position: absolute; left: 60%; top: 0%" width = "39%" height = "72px"></iframe>
+
+<script>
+var dummy;
+
+var element1 = document.getElementById( "editor" ) ;
+var iframeWindow1 = element1.contentWindow ;
+var element2 = document.getElementById( "simulator" ) ;
+var iframeWindow2 = element2.contentWindow ;
+
+window.addEventListener("message", receiveMessage, false);
+function receiveMessage(event){
+	var mes = JSON.parse(event.data);
+	console.log(event.data);
+	console.log(mes);
+	if (mes[1] == "editor"){
+		iframeWindow1.postMessage(mes[2], '*');
+	}
+	else if (mes[1] == "simulator"){
+		iframeWindow2.postMessage(JSON.stringify(mes[2]), '*'); //�ăG���R�[�h
+	}
+}
+
+</script>
+
+</html>

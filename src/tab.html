@@ -1,0 +1,19 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+  <script src="tab.js"></script>
+</head>
+<body>
+  <div id="myapp" style="position: absolute; left: 0px; top: 0px"></div>
+  <script>
+    var parentWindow = window.parent;
+    var app = Elm.Tab1.init({ node: document.getElementById('myapp') })
+    // you can use ports and stuff here
+    app.ports.sendMes.subscribe(function(str) {
+	    //alert(str);
+	    parentWindow.postMessage(str, '*');
+    });
+  </script>
+</body>
+</html>
