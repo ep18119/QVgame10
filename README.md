@@ -9,6 +9,7 @@ index.htmlを開いて開始
 simulator.html：シミュレータ <br>
 editor.html：ブロックエディタ <br>
 palette.html：パレット <br>
+tab.html：タブ <br>
 
 ### htmlファイルに呼び出されるjsファイル
 phina.js：シミュレータ制作で使用しているフレームワーク <br>
@@ -16,6 +17,7 @@ simulator.js：シミュレータ phina.jsを使用 <br>
 editor.js：elmファイルを変換したエディタ <br>
 palette.js：elmファイルを変換したパレット かなり適当 <br>
 stage1.js：シミュレータで利用するステージ情報 <br>
+tab.js：エディタで利用するタブなどのボタン まあまあ適当 <br>
 
 ### jsファイルに変換する前のelmファイル
 QVG5.elm：エディタ <br>
