@@ -18,12 +18,13 @@ palette.js：elmファイルを変換したパレット かなり適当 <br>
 stage1.js：シミュレータで利用するステージ情報 <br>
 
 ### jsファイルに変換する前のelmファイル
-QVG3.elm：エディタ <br>
+QVG5.elm：エディタ <br>
 Palette2.elm：パレット <br>
 
 ### 表示される画像
 stage01.png：ステージを構成するブロック <br>
-chara01.png：操作キャラクター <br>
+stage02.png：ステージを構成するブロック <br>
+chara02.png：操作キャラクター <br>
 item01.png：収集アイテム <br>
 
 ## 画面説明
